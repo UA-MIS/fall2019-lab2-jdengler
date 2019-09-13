@@ -8,12 +8,26 @@ namespace Lab2
 {
     class Program
     {
+        public const double CON_FAC = 0.413;
+        public const int FEET_IN_MILE = 5280;
+
         static void Main(string[] args)
         {
             //Starter code for lab 2
+            Console.WriteLine("Please enter your height in inches: ");
+            int height = int.Parse(Console.ReadLine());
 
+            Console.WriteLine("Please enter the number of steps taken in a day: ");
+            int steps = int.Parse(Console.ReadLine());
 
+            double strideLength = height * CON_FAC;
+            strideLength /= 12;
 
+            double feetWalked = strideLength * steps;
+            double milesWalked = feetWalked / FEET_IN_MILE;
+
+            Console.WriteLine("You walked " + Math.Round(milesWalked, 2) + " miles");
+            Console.ReadLine();
         }
     }
 }
