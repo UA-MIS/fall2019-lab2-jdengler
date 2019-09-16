@@ -20,14 +20,22 @@ namespace Lab2
             Console.WriteLine("Please enter the number of steps taken in a day: ");
             int steps = int.Parse(Console.ReadLine());
 
+            Console.WriteLine("You walked " + calcDistance(height, steps) + " miles");
+            Console.ReadLine();
+        }
+
+        public static double calcDistance(int height, int steps)
+        {
             double strideLength = height * CON_FAC;
             strideLength /= 12;
 
             double feetWalked = strideLength * steps;
             double milesWalked = feetWalked / FEET_IN_MILE;
 
-            Console.WriteLine("You walked " + Math.Round(milesWalked, 2) + " miles");
-            Console.ReadLine();
+            milesWalked = Math.Round(milesWalked, 2);
+
+            return milesWalked;
+
         }
     }
 }
